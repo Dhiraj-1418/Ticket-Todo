@@ -71,7 +71,11 @@ npm start
 The app will start at http://localhost:3000/ 🎉
 
 📸 Preview
-(Add a screenshot or GIF of your app here once ready)
+
+
+
+https://github.com/user-attachments/assets/0bb4cd9a-feed-4e49-9def-2e6ab52859bd
+
 
 🌟 Future Improvements
 Add due dates & priority levels for tickets
