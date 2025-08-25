@@ -74,7 +74,11 @@ The app will start at http://localhost:3000/ 🎉
 
 
 
-https://github.com/user-attachments/assets/0bb4cd9a-feed-4e49-9def-2e6ab52859bd
+
+https://github.com/user-attachments/assets/dc205f1f-129c-4c65-84e6-835180930124
+
+
+
 
 
 🌟 Future Improvements
