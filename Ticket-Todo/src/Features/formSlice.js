@@ -28,8 +28,8 @@ const formDataSlice = createSlice({
             localStorage.setItem("userDataStored" , JSON.stringify(state.userData))
         } ,
         edit : (state , action)=> {
-            const {index , firstName , lastName , From , To,boardingSt,coach,boardDate} = action.payload
-            state.userData[index] = {firstName : firstName , lastName : lastName , From : From , To : To,boardingSt:boardingSt,coach:coach,boardDate:boardDate}
+            const {index , firstName , lastName , from , to,boardingSt,coach,boardDate} = action.payload
+            state.userData[index] = {firstName : firstName , lastName : lastName , from : from, to : to,boardingSt:boardingSt,coach:coach,boardDate:boardDate}
             localStorage.setItem("userDataStored" , JSON.stringify(state.userData))
 
         }

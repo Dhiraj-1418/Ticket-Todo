@@ -47,25 +47,31 @@ function TicketForm() {
           boardingSt: boardingSt,
           boardDate: boardDate,
           coach: coach,
+       
         })
       );
     }
-    firstName("");
-    lastName("");
-    from("");
-    to("");
-    boardingSt("");
-    coach("");
-    boardDate("");
+    // firstName("");
+    // lastName("");
+    // from("");
+    // to("");
+    // boardingSt("");
+    // coach("");
+    // boardDate("");
   };
 
   return (
     <div className="d-flex border border-3 rounded-4">
       <div
-        className="  d-flex justify-content-center align-items-center "
+        className="  d-flex justify-content-center align-items-center  "
         style={{ height: "80vh", width: "80vw" }}
       >
-        <div style={{ height: "80%", width: "80%" }} className="">
+        <div
+          style={{ height: "80%", width: "80%" }}
+          className="border rounded-3 p-4"
+        >
+          <h2>Ticket Form</h2>
+          <hr />
           <Form onSubmit={(e) => handleAddAndUpdateData(e)}>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
@@ -114,7 +120,7 @@ function TicketForm() {
             </Form.Group>
 
             <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridCity">
+              <Form.Group as={Col} >
                 <Form.Label>Boarding At</Form.Label>
                 <Form.Control
                   type="text"
@@ -123,10 +129,10 @@ function TicketForm() {
                   required
                 />
               </Form.Group>
-              <Form.Group as={Col} controlId="formGridCity">
+              <Form.Group as={Col} >
                 <Form.Label>Date</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="date"
                   placeholder="01-01-2025"
                   value={boardDate}
                   onChange={(el) => setboardDate(el.target.value)}
@@ -138,7 +144,7 @@ function TicketForm() {
                 <Form.Label>Coach Preffer</Form.Label>
                 <Form.Select
                   defaultValue="Choose..."
-                  value={coach}
+             
                   onChange={(el) => setCoach(el.target.value)}
                   required
                 >
@@ -164,9 +170,9 @@ function TicketForm() {
               }
               variant="primary"
               type="submit"
-              className="w-100"
+              className="w-100 btn btn-secondary"
             >
-              {editIndex !== null ? "Booked" : "Book Now"}
+              {editIndex !== null ? "Save Changes" : "Book Now"}
             </Button>
           </Form>
         </div>
@@ -175,49 +181,65 @@ function TicketForm() {
         className="d-flex justify-content-center align-items-center "
         style={{ height: "80vh", width: "80vw" }}
       >
-        <div style={{ height: "80%", width: "80%" }}>
+        <div
+          style={{ height: "80%", width: "80%" }}
+          className="border rounded-3 p-4"
+        >
           {userData.length > 0 ? (
             userData.map((el, index) => (
+              
               <section key={index}>
-                <h5 className="text-primary">Ticket : {index + 1}</h5>
-                <span>
-                  <strong>Name :</strong> {el.firstName} {el.lastName}
-                </span>{" "}
-                <br />
-                <span>
-                  <strong>Journey : </strong>
-                  {el.from} to {el.to}
-                </span>
-                <br />
-                <span>
-                  <strong>Date : </strong>
-                  {el.boardDate}
-                </span>
-                <br />
-                <br />
-                <span>
-                  <strong>Boarding Station : </strong>
-                  {el.boardingSt}
-                </span>
+                {console.log(el)}
                 <div>
+                  <h3 className="text-danger">Pnr No : {index+8564923564}</h3>
+                  <span>
+                    <strong>Name :</strong> {el.firstName} {el.lastName}
+                  </span>
+                  <br />
+                  <span>
+                    <strong>Journey : </strong>
+                    {el.from} to {el.to}
+                  </span>
+                  <br />
+                  <span>
+                    <strong>Date : </strong>
+                    {el.boardDate}
+                  </span>
+                  <br />
+                  <span>
+                    <strong>Coach : </strong>
+                    {el.coach}
+                  </span>
+                  <br />
+                  <span>
+                    <strong>Boarding Station : </strong>
+                    {el.boardingSt}
+                  </span>
+                </div>
+
+                <div className="vstack gap-2 col-md-5 mx-auto  w-100">
                   <button
-                    className="me-3 btn btn-danger"
-                    onClick={() => dispatch(remove())}
-                  >
-                    Cancle
-                  </button>
-                  <button
-                    className=" btn btn-primary"
+                    type="button"
+                    className="btn btn-secondary"
                     onClick={() => {
                       seteditIndex(index);
                       setfirstName(el.firstName);
                       setlastName(el.lastName);
+                      setfrom(el.from);
+                      setto(el.o);
                       setCoach(el.coach);
                       setboardDate(el.boardDate);
                       setboardingSt(el.boardingSt);
                     }}
                   >
-                    Change Boarding Station
+                    Edits
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => dispatch(remove())}
+                  >
+                    Cancel
                   </button>
                 </div>
               </section>
