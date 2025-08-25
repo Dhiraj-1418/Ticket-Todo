@@ -226,7 +226,7 @@ function TicketForm() {
                       setfirstName(el.firstName);
                       setlastName(el.lastName);
                       setfrom(el.from);
-                      setto(el.o);
+                      setto(el.to);
                       setCoach(el.coach);
                       setboardDate(el.boardDate);
                       setboardingSt(el.boardingSt);
